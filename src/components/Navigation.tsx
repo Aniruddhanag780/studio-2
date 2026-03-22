@@ -24,8 +24,11 @@ export function Navigation() {
 
         <div className="flex items-center gap-4">
           <Button variant="ghost" className="text-sm font-medium hidden sm:inline-flex">Login</Button>
-          <Button variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
-            Get Access
+          <Button 
+            className="relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-6 h-10 rounded-full group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse-accent border-none shadow-lg"
+          >
+            <span className="relative z-10">Get Access</span>
+            <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 via-white/10 to-transparent pointer-events-none" />
           </Button>
         </div>
       </div>

@@ -35,14 +35,15 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 h-12 rounded-sm group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse">
-                <span className="relative z-10 flex items-center">
+              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-full group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
+                <span className="relative z-10 flex items-center text-base tracking-wide">
                   GET STARTED
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
-                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 via-white/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 via-white/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
               </Button>
-              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-12 rounded-sm">
+              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-full">
                 VIEW DEMO
               </Button>
             </div>
