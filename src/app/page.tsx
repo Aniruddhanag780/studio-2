@@ -89,7 +89,7 @@ export default function Home() {
             </div>
 
             {/* Quick Stats Overlay */}
-            <div className="mt-8 grid grid-cols-3 gap-4 p-6 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm">
+            <div className="mt-8 grid grid-cols-3 gap-4 p-6 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm">
               <div className="space-y-1">
                 <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Active Flows</p>
                 <p className="text-2xl font-headline font-bold text-primary">124</p>
@@ -104,7 +104,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 p-4 rounded-xl bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
+            <div className="mt-8 p-4 rounded-2xl bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
                 <span className="text-sm font-headline font-medium">whats the red bar between ths 2</span>

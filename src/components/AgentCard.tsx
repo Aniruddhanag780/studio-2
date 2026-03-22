@@ -39,7 +39,7 @@ export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
   }, [])
 
   return (
-    <Card className="bg-card border-border/50 hover:border-primary/30 transition-all duration-300 group flex flex-col h-full rounded-xl">
+    <Card className="bg-card border-border/50 hover:border-primary/30 transition-all duration-300 group flex flex-col h-full rounded-2xl overflow-hidden">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 px-4 border-b border-border/30">
         <div className="flex flex-col gap-1">
           <CardTitle className="font-headline text-sm font-bold tracking-tight text-primary/90">
