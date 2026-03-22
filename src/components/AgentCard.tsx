@@ -6,6 +6,7 @@ import { StatusIndicator } from "@/components/StatusIndicator"
 import { RefreshCcw, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { generateSimulatedAgentOutput } from "@/ai/flows/simulated-agent-output-flow"
 
 type SnippetType = 'engine' | 'stream' | 'orchestrator' | 'queue'
 
@@ -17,12 +18,30 @@ interface AgentCardProps {
 }
 
 export function AgentCard({ agentName, outputType, status, snippet = 'engine' }: AgentCardProps) {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
+  const [aiOutput, setAiOutput] = useState<string | null>(null)
+  const [isInitialLoading, setIsInitialLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1200)
+    const timer = setTimeout(() => setIsInitialLoading(false), 1200)
     return () => clearTimeout(timer)
   }, [])
+
+  const handleRefresh = async () => {
+    setIsLoading(true)
+    try {
+      const result = await generateSimulatedAgentOutput({
+        agentName,
+        outputType
+      })
+      setAiOutput(result.output)
+    } catch (error) {
+      console.error("Failed to generate AI output:", error)
+      setAiOutput("Error generating output...")
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   const EngineSnippet = () => (
     <div className="space-y-1">
@@ -159,6 +178,14 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
   )
 
   const renderSnippet = () => {
+    if (aiOutput) {
+      return (
+        <pre className="whitespace-pre-wrap break-words text-foreground opacity-90">
+          {aiOutput}
+        </pre>
+      )
+    }
+
     switch(snippet) {
       case 'stream': return <StreamSnippet />;
       case 'orchestrator': return <OrchestratorSnippet />;
@@ -180,12 +207,13 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
           variant="ghost" 
           size="icon" 
           className="h-8 w-8 hover:text-primary transition-colors rounded-lg"
-          disabled={isLoading}
+          disabled={isLoading || isInitialLoading}
+          onClick={handleRefresh}
         >
-          <RefreshCcw className={isLoading ? "animate-spin w-4 h-4" : "w-4 h-4"} />
+          <RefreshCcw className={(isLoading || isInitialLoading) ? "animate-spin w-4 h-4" : "w-4 h-4"} />
         </Button>
       </CardHeader>
-      <CardContent className="p-4 font-code text-[10px] leading-relaxed relative overflow-hidden bg-black/40">
+      <CardContent className="p-4 font-code text-[10px] leading-relaxed relative overflow-hidden bg-black/40 min-h-[160px] flex flex-col">
         <div className="flex items-center justify-between gap-2 text-muted-foreground/30 mb-3 border-b border-border/10 pb-2">
           <div className="flex items-center gap-1.5">
             <Terminal className="w-3 h-3" />
@@ -194,8 +222,8 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
           <span className="text-[8px] opacity-50">STABLE_OS_v2.4</span>
         </div>
         
-        <div className="custom-scrollbar relative">
-          {isLoading ? (
+        <div className="custom-scrollbar relative flex-grow">
+          {(isLoading || isInitialLoading) ? (
             <div className="flex flex-col gap-2 opacity-50 py-4">
               <div className="h-2 w-full bg-muted rounded animate-pulse" />
               <div className="h-2 w-3/4 bg-muted rounded animate-pulse" />
@@ -208,7 +236,9 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
             )}>
               <div className="flex">
                 <span className="text-primary/40 mr-3 opacity-50 select-none">$</span>
-                {renderSnippet()}
+                <div className="flex-grow">
+                  {renderSnippet()}
+                </div>
               </div>
               <span className="inline-block w-1.5 h-3 bg-primary ml-1 animate-status-pulse align-middle mt-2" />
             </div>
