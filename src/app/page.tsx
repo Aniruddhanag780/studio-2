@@ -73,12 +73,6 @@ export default function Home() {
               </div>
               <div className="space-y-4 lg:space-y-6 md:mt-12">
                 <AgentCard 
-                  agentName="DEPLOY_ORCHESTRATOR" 
-                  outputType="status_message" 
-                  status="online" 
-                  snippet="orchestrator"
-                />
-                <AgentCard 
                   agentName="TASK_QUEUE_PRIMARY" 
                   outputType="command_line" 
                   status="warning" 
