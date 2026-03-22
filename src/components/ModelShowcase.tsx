@@ -7,7 +7,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 export function ModelShowcase() {
   const models = [
     { name: "Gemini 2.5", id: "model-gemini" },
-    { name: "GPT-4o", id: "model-gpt" },
+    { name: "GPT-4 pro", id: "model-gpt" },
     { name: "Claude 3.5", id: "model-claude" },
   ]
 
