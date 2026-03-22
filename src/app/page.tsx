@@ -8,10 +8,10 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-16 relative overflow-hidden bg-[#0F0E0B]">
+    <div className="min-h-screen pt-16 relative overflow-hidden bg-background">
       {/* Background radial gradient for depth */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_60%_20%,_rgba(255,221,51,0.03)_0%,_transparent_50%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_10%_80%,_rgba(242,63,13,0.02)_0%,_transparent_50%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_10%_80%,_rgba(255,255,255,0.02)_0%,_transparent_50%)] pointer-events-none" />
 
       <Navigation />
 
@@ -106,10 +106,10 @@ export default function Home() {
 
             <div className="mt-8 p-4 rounded-xl bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
               <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent animate-status-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
                 <span className="text-sm font-headline font-medium">whats the red bar between ths 2</span>
               </div>
-              <ChevronRight className="w-4 h-4 text-accent transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="w-4 h-4 text-primary transition-transform group-hover:translate-x-1" />
             </div>
           </div>
 

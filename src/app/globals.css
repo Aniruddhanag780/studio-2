@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 45 15% 5%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 96%;
-    --card: 45 15% 7%;
+    --card: 0 0% 3%;
     --card-foreground: 0 0% 96%;
-    --popover: 45 15% 5%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 96%;
     --primary: 48 100% 60%;
-    --primary-foreground: 45 15% 5%;
-    --secondary: 45 15% 12%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 8%;
     --secondary-foreground: 48 100% 60%;
-    --muted: 45 10% 15%;
+    --muted: 0 0% 10%;
     --muted-foreground: 0 0% 65%;
-    --accent: 13 90% 50%;
+    --accent: 0 0% 12%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 45 10% 15%;
-    --input: 45 10% 15%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 48 100% 60%;
     --radius: 1rem;
   }
@@ -56,4 +56,31 @@
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   @apply bg-primary/40;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-150%) skewX(-15deg); }
+  100% { transform: translateX(150%) skewX(-15deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { boxShadow: 0 0 15px rgba(255,221,51,0.3); transform: scale(1); }
+  50% { boxShadow: 0 0 45px rgba(255,221,51,0.7); transform: scale(1.01); }
+}
+
+@keyframes glow-pulse-accent {
+  0%, 100% { boxShadow: 0 0 10px rgba(255,255,255,0.1); transform: scale(1); }
+  50% { boxShadow: 0 0 35px rgba(255,255,255,0.2); transform: scale(1.01); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite linear;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse-accent {
+  animation: glow-pulse-accent 2s ease-in-out infinite;
 }
