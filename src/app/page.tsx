@@ -7,11 +7,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-16 relative overflow-hidden bg-background">
-      {/* Background radial gradient for depth */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_60%_20%,_rgba(255,221,51,0.03)_0%,_transparent_50%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_10%_80%,_rgba(255,255,255,0.02)_0%,_transparent_50%)] pointer-events-none" />
-
+    <div className="min-h-screen pt-16 relative overflow-hidden bg-black">
       <Navigation />
 
       <main className="container mx-auto px-6 py-12 lg:py-24">
