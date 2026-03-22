@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Cpu } from "lucide-react"
+import { Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export function Navigation() {
@@ -22,7 +22,7 @@ export function Navigation() {
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2 group">
-            <Cpu className="w-6 h-6 text-primary transition-transform group-hover:scale-110" />
+            <Sparkles className="w-6 h-6 text-primary transition-transform group-hover:scale-110" />
             <span className="font-headline font-bold text-xl tracking-tight uppercase">Lyra AI</span>
           </Link>
         </div>
