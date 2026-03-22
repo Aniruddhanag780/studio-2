@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronRight, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
                 <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-white/20 blur-xl -z-0 animate-pulse" />
+                <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
               </Button>
               <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl">
                 VIEW DEMO
@@ -97,15 +97,6 @@ export default function Home() {
                 <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Latency</p>
                 <p className="text-2xl font-headline font-bold text-primary">12ms</p>
               </div>
-            </div>
-
-            {/* Specialized Yellow Advisory Card */}
-            <div className="mt-8 p-4 rounded-2xl bg-primary/10 border border-primary/40 flex items-center justify-between group cursor-pointer hover:bg-primary/20 transition-all duration-500 animate-glow-pulse shadow-[0_0_20px_rgba(255,221,51,0.1)]">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary animate-status-pulse shadow-[0_0_10px_rgba(255,221,51,0.8)]" />
-                <span className="text-sm font-headline font-bold text-primary tracking-tight">whats the red bar between ths 2</span>
-              </div>
-              <ChevronRight className="w-5 h-5 text-primary transition-transform group-hover:translate-x-1.5" />
             </div>
           </div>
 
