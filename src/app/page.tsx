@@ -1,3 +1,4 @@
+
 import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
@@ -34,12 +35,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 h-12 rounded-sm group transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,221,51,0.3)]">
+              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 h-12 rounded-sm group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse">
                 <span className="relative z-10 flex items-center">
                   GET STARTED
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
-                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 via-white/10 to-transparent pointer-events-none" />
               </Button>
               <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-12 rounded-sm">
                 VIEW DEMO

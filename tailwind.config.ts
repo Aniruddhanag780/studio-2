@@ -93,15 +93,21 @@ export default {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.4' },
         },
-        shimmer: {
-          '100%': { transform: 'translateX(100%)' },
+        'shimmer': {
+          '0%': { transform: 'translateX(-150%) skewX(-15deg)' },
+          '100%': { transform: 'translateX(150%) skewX(-15deg)' },
+        },
+        'glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 15px rgba(255,221,51,0.3)' },
+          '50%': { boxShadow: '0 0 35px rgba(255,221,51,0.6)' },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'status-pulse': 'status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        shimmer: 'shimmer 2s infinite',
+        'shimmer': 'shimmer 3s infinite linear',
+        'glow-pulse': 'glow-pulse 2.5s ease-in-out infinite',
       },
     },
   },
