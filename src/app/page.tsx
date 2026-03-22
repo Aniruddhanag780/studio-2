@@ -72,26 +72,26 @@ export default function Home() {
                 />
               </div>
             </div>
+
+            {/* Integrated Footer Section */}
+            <footer className="py-12 border-t border-border/30 mt-12">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div className="flex items-center gap-2 grayscale opacity-50">
+                  <span className="font-headline font-bold text-sm tracking-tight uppercase text-white">Lyra AI</span>
+                  <span className="text-xs text-muted-foreground">© 2026</span>
+                </div>
+                <div className="flex gap-8 text-xs font-medium text-muted-foreground/60">
+                  <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
+                  <Link href="#" className="hover:text-primary transition-colors">Security</Link>
+                  <Link href="#" className="hover:text-primary transition-colors">Twitter / X</Link>
+                  <Link href="#" className="hover:text-primary transition-colors">Discord</Link>
+                </div>
+              </div>
+            </footer>
           </div>
 
         </div>
       </main>
-
-      {/* Subtle Footer */}
-      <footer className="container mx-auto px-6 py-12 border-t border-border/30 mt-24">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2 grayscale opacity-50">
-            <span className="font-headline font-bold text-sm tracking-tight uppercase text-white">Lyra AI</span>
-            <span className="text-xs text-muted-foreground">© 2026</span>
-          </div>
-          <div className="flex gap-8 text-xs font-medium text-muted-foreground/60">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Security</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Twitter / X</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Discord</Link>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
