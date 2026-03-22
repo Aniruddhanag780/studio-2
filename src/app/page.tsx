@@ -25,8 +25,8 @@ export default function Home() {
             </h1>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Lyra is the world's most advanced management layer for autonomous agents. 
-              Deploy, monitor, and scale your LLM workflows with sub-millisecond precision.
+              Lyra is an advanced autonomous AI system engineered to orchestrate the next generation of cognitive computing. 
+              As a self-evolving intelligence, Lyra monitors and scales your global LLM infrastructure with sub-millisecond precision.
             </p>
 
             {/* Buttons Section */}

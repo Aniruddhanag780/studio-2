@@ -51,10 +51,24 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
       <div className="pl-4"><span className="text-foreground">engine.</span><span className="text-primary">reboot</span><span className="text-foreground">();</span></div>
       <div><span className="text-foreground">{`});`}</span></div>
       <div className="pt-2"><span className="text-foreground">engine.</span><span className="text-primary">boot</span><span className="text-foreground">();</span></div>
+      <div className="pt-2"><span className="text-primary">async function</span> <span className="text-foreground">optimizeNeuralPath() {`{`}</span></div>
+      <div className="pl-4"><span className="text-primary">const</span> <span className="text-foreground">paths</span> <span className="text-foreground">=</span> <span className="text-primary">await</span> <span className="text-foreground">engine.</span><span className="text-primary">getAvailablePaths</span><span className="text-foreground">();</span></div>
+      <div className="pl-4"><span className="text-primary">return</span> <span className="text-foreground">paths.</span><span className="text-primary">filter</span><span className="text-foreground">(p ={`>`} p.entropy {`<`} </span><span className="text-orange-400">0.5</span><span className="text-foreground">);</span></div>
+      <div><span className="text-foreground">{`}`}</span></div>
+      <div className="pt-2"><span className="text-foreground">engine.</span><span className="text-primary">registerMiddleware</span><span className="text-foreground">({`{`}</span></div>
+      <div className="pl-4"><span className="text-foreground">id:</span> <span className="text-emerald-400">"AUTH_PROX_V2"</span><span className="text-foreground">,</span></div>
+      <div className="pl-4"><span className="text-foreground">execute:</span> <span className="text-primary">async</span> <span className="text-foreground">(req) ={`>`} {`{`}</span></div>
+      <div className="pl-8"><span className="text-primary">const</span> <span className="text-foreground">valid</span> <span className="text-foreground">=</span> <span className="text-primary">await</span> <span className="text-foreground">Lyra.Auth.</span><span className="text-primary">verify</span><span className="text-foreground">(req.token);</span></div>
+      <div className="pl-8"><span className="text-primary">if</span> <span className="text-foreground">(!valid) </span><span className="text-primary">throw new</span> <span className="text-foreground">Error(</span><span className="text-emerald-400">"Access Denied"</span><span className="text-foreground">);</span></div>
+      <div className="pl-4"><span className="text-foreground">{`}`}</span></div>
+      <div><span className="text-foreground">{`});`}</span></div>
+      <div className="pt-2 font-bold text-primary">// INTERNAL_LOGIC_END</div>
       <div className="text-muted-foreground/20 italic">// System monitoring active...</div>
       <div className="text-muted-foreground/20 italic">// Loading weights for neural-v4...</div>
       <div className="text-muted-foreground/20 italic">// Verifying checksums...</div>
       <div className="text-muted-foreground/20 italic">// Handshake established with central node.</div>
+      <div className="text-muted-foreground/20 italic">// Running garbage collection...</div>
+      <div className="text-muted-foreground/20 italic">// Memory heap optimized.</div>
       <div className="pt-2"><span className="text-foreground">export default engine;</span></div>
     </div>
   )
@@ -84,10 +98,24 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
       <div className="pl-4"><span className="text-foreground">compression:</span> <span className="text-orange-400">true</span><span className="text-foreground">,</span></div>
       <div className="pl-4"><span className="text-foreground">encryption:</span> <span className="text-emerald-400">"AES-256"</span></div>
       <div><span className="text-foreground">{`}));`}</span></div>
+      <div className="pt-2 font-bold text-primary">// EXTENDED_STREAM_LOGIC</div>
+      <div className="pt-1"><span className="text-primary">const</span> <span className="text-foreground">monitor</span> <span className="text-foreground">=</span> <span className="text-primary">setInterval</span><span className="text-foreground">(() ={`>`} {`{`}</span></div>
+      <div className="pl-4"><span className="text-primary">const</span> <span className="text-foreground">stats</span> <span className="text-foreground">=</span> <span className="text-foreground">source.</span><span className="text-primary">getStats</span><span className="text-foreground">();</span></div>
+      <div className="pl-4"><span className="text-foreground">console.</span><span className="text-primary">table</span><span className="text-foreground">(stats);</span></div>
+      <div className="pl-4"><span className="text-primary">if</span> <span className="text-foreground">(stats.latency {`>`} </span><span className="text-orange-400">100</span><span className="text-foreground">) {`{`}</span></div>
+      <div className="pl-8"><span className="text-foreground">source.</span><span className="text-primary">rebalance</span><span className="text-foreground">();</span></div>
+      <div className="pl-4"><span className="text-foreground">{`}`}</span></div>
+      <div><span className="text-foreground">{`}, `}</span><span className="text-orange-400">5000</span><span className="text-foreground">);</span></div>
+      <div className="pt-2"><span className="text-foreground">source.</span><span className="text-primary">on</span><span className="text-foreground">(</span><span className="text-emerald-400">"drain"</span><span className="text-foreground">, () ={`>`} {`{`}</span></div>
+      <div className="pl-4"><span className="text-foreground">console.</span><span className="text-primary">log</span><span className="text-foreground">(</span><span className="text-emerald-400">"Buffer cleared, resuming ingest."</span><span className="text-foreground">);</span></div>
+      <div className="pl-4"><span className="text-foreground">source.</span><span className="text-primary">resume</span><span className="text-foreground">();</span></div>
+      <div><span className="text-foreground">{`});`}</span></div>
       <div className="pt-2"><span className="text-foreground">source.</span><span className="text-primary">connect</span><span className="text-foreground">();</span></div>
       <div className="text-muted-foreground/20 italic">// Establishing TLS handshake...</div>
       <div className="text-muted-foreground/20 italic">// Buffering incoming sequence #4992...</div>
       <div className="text-muted-foreground/20 italic">// Parity check passed.</div>
+      <div className="text-muted-foreground/20 italic">// Re-routing traffic to secondary shard...</div>
+      <div className="text-muted-foreground/20 italic">// Syncing distributed clock...</div>
       <div className="pt-2 font-bold text-primary">STREAM_UP_V24</div>
     </div>
   )
