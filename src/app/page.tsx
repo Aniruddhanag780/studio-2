@@ -41,9 +41,6 @@ export default function Home() {
                   <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
                 </Link>
               </Button>
-              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl text-white">
-                VIEW DEMO
-              </Button>
             </div>
 
             <ModelShowcase />
