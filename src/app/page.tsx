@@ -34,23 +34,20 @@ export default function Home() {
               Deploy, monitor, and scale your LLM workflows with sub-millisecond precision.
             </p>
 
-            {/* Get Started Card */}
-            <Card className="p-8 bg-primary/5 border-primary/20 backdrop-blur-sm relative overflow-hidden group/cta">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-50" />
-              <div className="relative z-10 flex flex-wrap gap-4">
-                <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
-                  <span className="relative z-10 flex items-center text-base tracking-wide">
-                    GET STARTED
-                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                  <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 via-white/20 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
-                </Button>
-                <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl">
-                  VIEW DEMO
-                </Button>
-              </div>
-            </Card>
+            {/* Buttons Section */}
+            <div className="flex flex-wrap gap-4">
+              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
+                <span className="relative z-10 flex items-center text-base tracking-wide">
+                  GET STARTED
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 via-white/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
+              </Button>
+              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl">
+                VIEW DEMO
+              </Button>
+            </div>
 
             <ModelShowcase />
 
