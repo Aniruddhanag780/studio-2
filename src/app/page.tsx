@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Cpu } from "lucide-react"
 import Link from "next/link"
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
           {/* Hero Section (Left Column) */}
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest animate-pulse">
-              <Sparkles className="w-3 h-3" />
+              <Cpu className="w-3 h-3" />
               v2.4 Operational
             </div>
             
