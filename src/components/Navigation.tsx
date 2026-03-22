@@ -25,16 +25,9 @@ export function Navigation() {
             <Cpu className="w-6 h-6 text-primary transition-transform group-hover:scale-110" />
             <span className="font-headline font-bold text-xl tracking-tight uppercase">Lyra AI</span>
           </Link>
-          
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/platform" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Platform</Link>
-            <Link href="/pricing" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Pricing</Link>
-            <Link href="/docs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Docs</Link>
-          </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="text-sm font-medium hidden sm:inline-flex rounded-xl">Login</Button>
           <Button 
             onClick={handleGetAccessClick}
             className={cn(
