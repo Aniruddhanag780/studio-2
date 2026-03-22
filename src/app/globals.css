@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 45 15% 5%;
     --foreground: 0 0% 96%;
-    --card: 0 0% 3%;
+    --card: 45 15% 7%;
     --card-foreground: 0 0% 96%;
-    --popover: 0 0% 0%;
+    --popover: 45 15% 5%;
     --popover-foreground: 0 0% 96%;
     --primary: 48 100% 60%;
     --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 8%;
+    --secondary: 45 15% 12%;
     --secondary-foreground: 48 100% 60%;
-    --muted: 0 0% 10%;
+    --muted: 45 15% 15%;
     --muted-foreground: 0 0% 65%;
     --accent: 0 0% 100%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
+    --border: 45 15% 15%;
+    --input: 45 15% 15%;
     --ring: 48 100% 60%;
     --radius: 1rem;
   }
@@ -73,6 +73,27 @@
   50% { box-shadow: 0 0 45px rgba(255,255,255,0.8); transform: scale(1.01); }
 }
 
+/* New Code Glitch Animations */
+@keyframes code-glitch {
+  0%, 100% { transform: translate(0); opacity: 1; filter: blur(0); }
+  2% { transform: translate(-2px, 1px); filter: blur(1px); }
+  4% { transform: translate(2px, -1px); opacity: 0.8; }
+  6% { transform: translate(-1px, -1px); filter: blur(0); opacity: 1; }
+  8% { transform: translate(1px, 2px); filter: blur(1.5px); }
+  10% { transform: translate(0); opacity: 0.9; }
+}
+
+@keyframes code-flow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes code-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
 .animate-shimmer {
   animation: shimmer 2.5s infinite linear;
 }
@@ -83,4 +104,16 @@
 
 .animate-glow-pulse-accent {
   animation: glow-pulse-accent 2s ease-in-out infinite;
+}
+
+.animate-code-glitch {
+  animation: code-glitch 5s infinite;
+}
+
+.animate-code-flow {
+  animation: code-flow 8s ease-in-out infinite;
+}
+
+.animate-code-blink {
+  animation: code-blink 0.2s infinite steps(2);
 }
