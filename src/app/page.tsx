@@ -72,12 +72,7 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-4 lg:space-y-6 md:mt-12">
-                <AgentCard 
-                  agentName="TASK_QUEUE_PRIMARY" 
-                  outputType="command_line" 
-                  status="warning" 
-                  snippet="queue"
-                />
+                {/* Secondary Column - Cards removed for cleaner layout */}
               </div>
             </div>
           </div>
