@@ -3,14 +3,13 @@
 import { useState, useEffect } from "react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { StatusIndicator } from "@/components/StatusIndicator"
-import { generateSimulatedAgentOutput, type SimulatedAgentOutputInput } from "@/ai/flows/simulated-agent-output-flow"
 import { RefreshCcw, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 interface AgentCardProps {
   agentName: string
-  outputType: SimulatedAgentOutputInput["outputType"]
+  outputType: 'command_line' | 'log_entry' | 'status_message'
   status: "online" | "offline" | "error" | "warning"
 }
 
@@ -22,26 +21,34 @@ export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
     return () => clearTimeout(timer)
   }, [])
 
-  // The specific code snippet requested by the user with manual syntax highlighting
   const HighlightedCode = () => (
     <div className="space-y-1">
       <div>
-        <span className="text-primary">import</span> <span className="text-foreground">Lyra</span> <span className="text-primary">from</span> <span className="text-emerald-400">"lyra-core"</span><span className="text-foreground">;</span>
-      </div>
-      <div>
-        <span className="text-primary">const</span> <span className="text-foreground">lyra</span> <span className="text-foreground">=</span> <span className="text-primary">new</span> <span className="text-foreground">Lyra</span><span className="text-foreground">({`{`}</span>
-      </div>
-      <div className="pl-4">
-        <span className="text-foreground">apiKey:</span> <span className="text-emerald-400">"LYRA_9X2A_RANDOM_001"</span><span className="text-foreground">,</span>
-      </div>
-      <div className="pl-4">
-        <span className="text-foreground">mode:</span> <span className="text-emerald-400">"smart-init"</span><span className="text-foreground">,</span>
-      </div>
-      <div>
-        <span className="text-foreground">{`});`}</span>
+        <span className="text-primary">const</span> <span className="text-foreground">LyraEngine</span> <span className="text-foreground">=</span> <span className="text-primary">require</span><span className="text-foreground">(</span><span className="text-emerald-400">"lyra-engine"</span><span className="text-foreground">);</span>
       </div>
       <div className="pt-1">
-        <span className="text-foreground">lyra.</span><span className="text-primary">initialize</span><span className="text-foreground">();</span>
+        <span className="text-primary">const</span> <span className="text-foreground">config</span> <span className="text-foreground">=</span> <span className="text-foreground">{`{`}</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">token:</span> <span className="text-emerald-400">"RND-LYRA-77XZ"</span><span className="text-foreground">,</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">memory:</span> <span className="text-orange-400">true</span><span className="text-foreground">,</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">autoLearning:</span> <span className="text-orange-400">false</span><span className="text-foreground">,</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">responseSpeed:</span> <span className="text-emerald-400">"fast"</span>
+      </div>
+      <div>
+        <span className="text-foreground">{`};`}</span>
+      </div>
+      <div className="pt-1">
+        <span className="text-primary">const</span> <span className="text-foreground">engine</span> <span className="text-foreground">=</span> <span className="text-primary">new</span> <span className="text-foreground">LyraEngine(config);</span>
+      </div>
+      <div>
+        <span className="text-foreground">engine.</span><span className="text-primary">boot</span><span className="text-foreground">();</span>
       </div>
     </div>
   )
@@ -73,7 +80,7 @@ export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
           <span className="text-[8px] opacity-50">STABLE_OS_v2.4</span>
         </div>
         
-        <div className="custom-scrollbar overflow-y-auto max-h-36 min-h-[120px] relative">
+        <div className="custom-scrollbar overflow-y-auto max-h-48 min-h-[140px] relative">
           {isLoading ? (
             <div className="flex flex-col gap-2 opacity-50">
               <div className="h-2 w-full bg-muted rounded animate-pulse" />
