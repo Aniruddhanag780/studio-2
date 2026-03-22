@@ -1,8 +1,8 @@
-
 import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
 import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import { ArrowRight, ChevronRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 
@@ -34,19 +34,23 @@ export default function Home() {
               Deploy, monitor, and scale your LLM workflows with sub-millisecond precision.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-full group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
-                <span className="relative z-10 flex items-center text-base tracking-wide">
-                  GET STARTED
-                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </span>
-                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 via-white/20 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
-              </Button>
-              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-full">
-                VIEW DEMO
-              </Button>
-            </div>
+            {/* Get Started Card */}
+            <Card className="p-8 bg-primary/5 border-primary/20 backdrop-blur-sm relative overflow-hidden group/cta">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-50" />
+              <div className="relative z-10 flex flex-wrap gap-4">
+                <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
+                  <span className="relative z-10 flex items-center text-base tracking-wide">
+                    GET STARTED
+                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 via-white/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
+                </Button>
+                <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl">
+                  VIEW DEMO
+                </Button>
+              </div>
+            </Card>
 
             <ModelShowcase />
 
@@ -88,7 +92,7 @@ export default function Home() {
             </div>
 
             {/* Quick Stats Overlay */}
-            <div className="mt-8 grid grid-cols-3 gap-4 p-6 rounded-lg bg-card/50 border border-border/50 backdrop-blur-sm">
+            <div className="mt-8 grid grid-cols-3 gap-4 p-6 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm">
               <div className="space-y-1">
                 <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Active Flows</p>
                 <p className="text-2xl font-headline font-bold text-primary">124</p>
@@ -103,7 +107,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 p-4 rounded bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
+            <div className="mt-8 p-4 rounded-xl bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent animate-status-pulse" />
                 <span className="text-sm font-headline font-medium">whats the red bar between ths 2</span>

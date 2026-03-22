@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState } from "react"
@@ -35,11 +34,11 @@ export function Navigation() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="text-sm font-medium hidden sm:inline-flex">Login</Button>
+          <Button variant="ghost" className="text-sm font-medium hidden sm:inline-flex rounded-xl">Login</Button>
           <Button 
             onClick={handleGetAccessClick}
             className={cn(
-              "relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-6 h-10 rounded-full group transition-all duration-500 hover:scale-[1.05] border-none shadow-lg",
+              "relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-6 h-10 rounded-xl group transition-all duration-500 hover:scale-[1.05] border-none shadow-lg",
               isAnimating && "animate-glow-pulse-accent"
             )}
           >
