@@ -44,7 +44,7 @@ export function Navigation() {
           >
             <span className="relative z-10">Get Access</span>
             <div className={cn(
-              "absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 via-white/10 to-transparent pointer-events-none",
+              "absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none",
               isAnimating && "animate-shimmer"
             )} />
           </Button>

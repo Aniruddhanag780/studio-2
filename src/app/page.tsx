@@ -2,7 +2,6 @@ import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { ArrowRight, ChevronRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 
@@ -36,13 +35,14 @@ export default function Home() {
 
             {/* Buttons Section */}
             <div className="flex flex-wrap gap-4">
-              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
+              <Button className="relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse-accent border-none shadow-xl">
                 <span className="relative z-10 flex items-center text-base tracking-wide">
                   GET STARTED
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
-                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 via-white/20 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
+                {/* Darker shimmer for better visibility on white button */}
+                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-white/20 blur-xl -z-0 animate-pulse" />
               </Button>
               <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl">
                 VIEW DEMO
