@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
@@ -57,7 +56,7 @@ export default function Home() {
 
           {/* Dashboard Section (Right Column) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 items-start">
               <div className="space-y-4 lg:space-y-6">
                 <AgentCard 
                   agentName="ENGINE_BOOT_01" 

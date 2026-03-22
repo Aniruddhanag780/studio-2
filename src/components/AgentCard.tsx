@@ -168,7 +168,7 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
   }
 
   return (
-    <Card className="bg-card border-border/50 hover:border-primary/30 transition-all duration-300 group flex flex-col h-full rounded-2xl overflow-hidden shadow-2xl">
+    <Card className="bg-card border-border/50 hover:border-primary/30 transition-all duration-300 group flex flex-col rounded-2xl overflow-hidden shadow-2xl">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 px-4 border-b border-border/30">
         <div className="flex flex-col gap-1">
           <CardTitle className="font-headline text-sm font-bold tracking-tight text-primary/90">
@@ -185,7 +185,7 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
           <RefreshCcw className={isLoading ? "animate-spin w-4 h-4" : "w-4 h-4"} />
         </Button>
       </CardHeader>
-      <CardContent className="p-4 flex-grow font-code text-[10px] leading-relaxed relative overflow-hidden bg-black/40">
+      <CardContent className="p-4 font-code text-[10px] leading-relaxed relative overflow-hidden bg-black/40">
         <div className="flex items-center justify-between gap-2 text-muted-foreground/30 mb-3 border-b border-border/10 pb-2">
           <div className="flex items-center gap-1.5">
             <Terminal className="w-3 h-3" />
@@ -194,9 +194,9 @@ export function AgentCard({ agentName, outputType, status, snippet = 'engine' }:
           <span className="text-[8px] opacity-50">STABLE_OS_v2.4</span>
         </div>
         
-        <div className="custom-scrollbar overflow-y-auto max-h-48 min-h-[140px] relative">
+        <div className="custom-scrollbar relative">
           {isLoading ? (
-            <div className="flex flex-col gap-2 opacity-50">
+            <div className="flex flex-col gap-2 opacity-50 py-4">
               <div className="h-2 w-full bg-muted rounded animate-pulse" />
               <div className="h-2 w-3/4 bg-muted rounded animate-pulse" />
               <div className="h-2 w-1/2 bg-muted rounded animate-pulse" />
