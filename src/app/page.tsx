@@ -82,22 +82,6 @@ export default function Home() {
                 />
               </div>
             </div>
-
-            {/* Quick Stats Overlay */}
-            <div className="mt-8 grid grid-cols-3 gap-4 p-6 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm">
-              <div className="space-y-1">
-                <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Active Flows</p>
-                <p className="text-2xl font-headline font-bold text-primary">124</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Uptime</p>
-                <p className="text-2xl font-headline font-bold text-primary">99.9%</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Latency</p>
-                <p className="text-2xl font-headline font-bold text-primary">12ms</p>
-              </div>
-            </div>
           </div>
 
         </div>
