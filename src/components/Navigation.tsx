@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState } from "react"
@@ -36,7 +37,7 @@ export function Navigation() {
               isAnimating && "animate-glow-pulse-accent"
             )}
           >
-            <Link href="https://lyraconsole.netlify.app/signup">
+            <Link href="https://lyraconsole.netlify.app">
               <span className="relative z-10">Get Access</span>
               <div className={cn(
                 "absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none",

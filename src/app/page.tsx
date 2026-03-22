@@ -1,3 +1,4 @@
+
 import { Navigation } from "@/components/Navigation"
 import { AgentCard } from "@/components/AgentCard"
 import { ModelShowcase } from "@/components/ModelShowcase"
@@ -32,7 +33,7 @@ export default function Home() {
             {/* Buttons Section */}
             <div className="flex flex-wrap gap-4">
               <Button asChild className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
-                <Link href="https://lyraconsole.netlify.app/signup">
+                <Link href="https://lyraconsole.netlify.app">
                   <span className="relative z-10 flex items-center text-base tracking-wide">
                     GET STARTED
                     <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
