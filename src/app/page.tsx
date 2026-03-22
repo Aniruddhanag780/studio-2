@@ -31,13 +31,15 @@ export default function Home() {
 
             {/* Buttons Section */}
             <div className="flex flex-wrap gap-4">
-              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
-                <span className="relative z-10 flex items-center text-base tracking-wide">
-                  GET STARTED
-                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </span>
-                <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
+              <Button asChild className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-14 rounded-xl group transition-all duration-500 hover:scale-[1.05] animate-glow-pulse border-none shadow-xl">
+                <Link href="https://lyraconsole.netlify.app/">
+                  <span className="relative z-10 flex items-center text-base tracking-wide">
+                    GET STARTED
+                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
+                </Link>
               </Button>
               <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl text-white">
                 VIEW DEMO

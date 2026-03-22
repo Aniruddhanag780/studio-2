@@ -29,17 +29,20 @@ export function Navigation() {
 
         <div className="flex items-center gap-4">
           <Button 
+            asChild
             onClick={handleGetAccessClick}
             className={cn(
               "relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-6 h-10 rounded-xl group transition-all duration-500 hover:scale-[1.05] border-none shadow-lg",
               isAnimating && "animate-glow-pulse-accent"
             )}
           >
-            <span className="relative z-10">Get Access</span>
-            <div className={cn(
-              "absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none",
-              isAnimating && "animate-shimmer"
-            )} />
+            <Link href="https://lyraconsole.netlify.app/">
+              <span className="relative z-10">Get Access</span>
+              <div className={cn(
+                "absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none",
+                isAnimating && "animate-shimmer"
+              )} />
+            </Link>
           </Button>
         </div>
       </div>
