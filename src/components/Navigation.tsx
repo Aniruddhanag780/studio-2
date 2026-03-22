@@ -1,0 +1,34 @@
+
+"use client"
+
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Cpu } from "lucide-react"
+
+export function Navigation() {
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="flex items-center gap-8">
+          <Link href="/" className="flex items-center gap-2 group">
+            <Cpu className="w-6 h-6 text-primary transition-transform group-hover:scale-110" />
+            <span className="font-headline font-bold text-xl tracking-tight uppercase">Lyra AI</span>
+          </Link>
+          
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/platform" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Platform</Link>
+            <Link href="/pricing" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Pricing</Link>
+            <Link href="/docs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Docs</Link>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" className="text-sm font-medium hidden sm:inline-flex">Login</Button>
+          <Button variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
+            Get Access
+          </Button>
+        </div>
+      </div>
+    </nav>
+  )
+}

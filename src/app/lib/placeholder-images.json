@@ -1,0 +1,23 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "model-gemini",
+      "description": "Google Gemini Logo Placeholder",
+      "imageUrl": "https://picsum.photos/seed/gemini/100/100",
+      "imageHint": "google gemini logo"
+    },
+    {
+      "id": "model-gpt",
+      "description": "OpenAI GPT Logo Placeholder",
+      "imageUrl": "https://picsum.photos/seed/gpt/100/100",
+      "imageHint": "openai logo"
+    },
+    {
+      "id": "model-claude",
+      "description": "Anthropic Claude Logo Placeholder",
+      "imageUrl": "https://picsum.photos/seed/claude/100/100",
+      "imageHint": "anthropic logo"
+    }
+  ]
+}
