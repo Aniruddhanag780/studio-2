@@ -40,7 +40,6 @@ export default function Home() {
                   GET STARTED
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
-                {/* Darker shimmer for better visibility on white button */}
                 <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none" />
                 <div className="absolute inset-0 bg-white/20 blur-xl -z-0 animate-pulse" />
               </Button>
@@ -104,12 +103,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 p-4 rounded-2xl bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
+            {/* Specialized Yellow Advisory Card */}
+            <div className="mt-8 p-4 rounded-2xl bg-primary/10 border border-primary/40 flex items-center justify-between group cursor-pointer hover:bg-primary/20 transition-all duration-500 animate-glow-pulse shadow-[0_0_20px_rgba(255,221,51,0.1)]">
               <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
-                <span className="text-sm font-headline font-medium">whats the red bar between ths 2</span>
+                <div className="w-2 h-2 rounded-full bg-primary animate-status-pulse shadow-[0_0_10px_rgba(255,221,51,0.8)]" />
+                <span className="text-sm font-headline font-bold text-primary tracking-tight">whats the red bar between ths 2</span>
               </div>
-              <ChevronRight className="w-4 h-4 text-primary transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="w-5 h-5 text-primary transition-transform group-hover:translate-x-1.5" />
             </div>
           </div>
 
