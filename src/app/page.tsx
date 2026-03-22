@@ -20,7 +20,7 @@ export default function Home() {
               v2.4 Operational
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-headline font-bold leading-[0.9] tracking-tighter">
+            <h1 className="text-5xl lg:text-7xl font-headline font-bold leading-[0.9] tracking-tighter text-white">
               THE NEXT GEN <span className="text-primary italic">AI CONSOLE</span>
             </h1>
             
@@ -39,7 +39,7 @@ export default function Home() {
                 <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/10 via-black/5 to-transparent pointer-events-none" />
                 <div className="absolute inset-0 bg-primary/20 blur-xl -z-0 animate-pulse" />
               </Button>
-              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl">
+              <Button variant="outline" className="border-border hover:bg-muted/50 font-bold px-8 h-14 rounded-xl text-white">
                 VIEW DEMO
               </Button>
             </div>
@@ -59,14 +59,16 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
               <div className="space-y-4 lg:space-y-6">
                 <AgentCard 
-                  agentName="TEST-GEN-01" 
+                  agentName="ENGINE_BOOT_01" 
                   outputType="command_line" 
                   status="online" 
+                  snippet="engine"
                 />
                 <AgentCard 
                   agentName="EVENT_STREAM_X" 
                   outputType="log_entry" 
                   status="online" 
+                  snippet="stream"
                 />
               </div>
               <div className="space-y-4 lg:space-y-6 md:mt-12">
@@ -74,11 +76,13 @@ export default function Home() {
                   agentName="DEPLOY_ORCHESTRATOR" 
                   outputType="status_message" 
                   status="online" 
+                  snippet="orchestrator"
                 />
                 <AgentCard 
                   agentName="TASK_QUEUE_PRIMARY" 
                   outputType="command_line" 
                   status="warning" 
+                  snippet="queue"
                 />
               </div>
             </div>
@@ -91,7 +95,7 @@ export default function Home() {
       <footer className="container mx-auto px-6 py-12 border-t border-border/30 mt-24">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2 grayscale opacity-50">
-            <span className="font-headline font-bold text-sm tracking-tight uppercase">Lyra AI</span>
+            <span className="font-headline font-bold text-sm tracking-tight uppercase text-white">Lyra AI</span>
             <span className="text-xs text-muted-foreground">© 2024</span>
           </div>
           <div className="flex gap-8 text-xs font-medium text-muted-foreground/60">

@@ -7,13 +7,16 @@ import { RefreshCcw, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
+type SnippetType = 'engine' | 'stream' | 'orchestrator' | 'queue'
+
 interface AgentCardProps {
   agentName: string
   outputType: 'command_line' | 'log_entry' | 'status_message'
   status: "online" | "offline" | "error" | "warning"
+  snippet?: SnippetType
 }
 
-export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
+export function AgentCard({ agentName, outputType, status, snippet = 'engine' }: AgentCardProps) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -21,7 +24,7 @@ export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
     return () => clearTimeout(timer)
   }, [])
 
-  const HighlightedCode = () => (
+  const EngineSnippet = () => (
     <div className="space-y-1">
       <div>
         <span className="text-primary">const</span> <span className="text-foreground">LyraEngine</span> <span className="text-foreground">=</span> <span className="text-primary">require</span><span className="text-foreground">(</span><span className="text-emerald-400">"lyra-engine"</span><span className="text-foreground">);</span>
@@ -52,6 +55,117 @@ export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
       </div>
     </div>
   )
+
+  const StreamSnippet = () => (
+    <div className="space-y-1">
+      <div>
+        <span className="text-primary">import</span> <span className="text-foreground">{`{ StreamX }`}</span> <span className="text-primary">from</span> <span className="text-emerald-400">"@lyra/streams"</span><span className="text-foreground">;</span>
+      </div>
+      <div>
+        <span className="text-primary">const</span> <span className="text-foreground">source</span> <span className="text-foreground">=</span> <span className="text-primary">new</span> <span className="text-foreground">StreamX(</span><span className="text-emerald-400">"PRI_UPS_01"</span><span className="text-foreground">);</span>
+      </div>
+      <div className="pt-1">
+        <span className="text-foreground">source.</span><span className="text-primary">on</span><span className="text-foreground">(</span><span className="text-emerald-400">"data"</span><span className="text-foreground">, (</span><span className="text-foreground">packet</span><span className="text-foreground">) ={`>`} {`{`}</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-primary">const</span> <span className="text-foreground">normalized</span> <span className="text-foreground">=</span> <span className="text-foreground">Lyra.</span><span className="text-primary">process</span><span className="text-foreground">(packet);</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-primary">if</span> <span className="text-foreground">(normalized.entropy {`>`}</span> <span className="text-orange-400">0.8</span><span className="text-foreground">) {`{`}</span>
+      </div>
+      <div className="pl-8">
+        <span className="text-foreground">Alert.</span><span className="text-primary">dispatch</span><span className="text-foreground">(</span><span className="text-emerald-400">"anomaly"</span><span className="text-foreground">);</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">{`}`}</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">buffer.</span><span className="text-primary">push</span><span className="text-foreground">(normalized);</span>
+      </div>
+      <div>
+        <span className="text-foreground">{`});`}</span>
+      </div>
+      <div>
+        <span className="text-foreground">source.</span><span className="text-primary">connect</span><span className="text-foreground">();</span>
+      </div>
+    </div>
+  )
+
+  const OrchestratorSnippet = () => (
+    <div className="space-y-1">
+      <div>
+        <span className="text-primary">async function</span> <span className="text-primary">deploy</span><span className="text-foreground">(manifest) {`{`}</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-primary">const</span> <span className="text-foreground">fleet</span> <span className="text-foreground">=</span> <span className="text-primary">await</span> <span className="text-foreground">Lyra.Orchestrator.</span><span className="text-primary">getFleet</span><span className="text-foreground">();</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-primary">for</span> <span className="text-foreground">(</span><span className="text-primary">const</span> <span className="text-foreground">node</span> <span className="text-primary">of</span> <span className="text-foreground">fleet) {`{`}</span>
+      </div>
+      <div className="pl-8">
+        <span className="text-primary">if</span> <span className="text-foreground">(node.status ===</span> <span className="text-emerald-400">"idle"</span><span className="text-foreground">) {`{`}</span>
+      </div>
+      <div className="pl-12">
+        <span className="text-primary">await</span> <span className="text-foreground">node.</span><span className="text-primary">inject</span><span className="text-foreground">(manifest.blob);</span>
+      </div>
+      <div className="pl-12">
+        <span className="text-foreground">node.</span><span className="text-primary">scale</span><span className="text-foreground">(manifest.replicas);</span>
+      </div>
+      <div className="pl-12">
+        <span className="text-foreground">console.</span><span className="text-primary">log</span><span className="text-foreground">(</span><span className="text-emerald-400">`Node linked`</span><span className="text-foreground">);</span>
+      </div>
+      <div className="pl-8">
+        <span className="text-foreground">{`}`}</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">{`}`}</span>
+      </div>
+      <div>
+        <span className="text-foreground">{`}`}</span>
+      </div>
+    </div>
+  )
+
+  const QueueSnippet = () => (
+    <div className="space-y-1">
+      <div>
+        <span className="text-primary">const</span> <span className="text-foreground">queue</span> <span className="text-foreground">=</span> <span className="text-primary">new</span> <span className="text-foreground">Lyra.</span><span className="text-primary">PriorityQueue</span><span className="text-foreground">(</span><span className="text-emerald-400">"TASKS"</span><span className="text-foreground">);</span>
+      </div>
+      <div>
+        <span className="text-foreground">queue.concurrency</span> <span className="text-foreground">=</span> <span className="text-orange-400">128</span><span className="text-foreground">;</span>
+      </div>
+      <div className="pt-1">
+        <span className="text-foreground">queue.</span><span className="text-primary">process</span><span className="text-foreground">(</span><span className="text-primary">async</span> <span className="text-foreground">(task) ={`>`} {`{`}</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-primary">const</span> <span className="text-foreground">result</span> <span className="text-foreground">=</span> <span className="text-primary">await</span> <span className="text-foreground">Lyra.</span><span className="text-primary">Infer</span><span className="text-foreground">(task.prompt);</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-primary">await</span> <span className="text-foreground">task.</span><span className="text-primary">callback</span><span className="text-foreground">(result);</span>
+      </div>
+      <div className="pl-4">
+        <span className="text-foreground">metrics.</span><span className="text-primary">track</span><span className="text-foreground">(</span><span className="text-emerald-400">"throughput"</span><span className="text-foreground">,</span> <span className="text-orange-400">1</span><span className="text-foreground">);</span>
+      </div>
+      <div>
+        <span className="text-foreground">{`});`}</span>
+      </div>
+      <div>
+        <span className="text-foreground">queue.</span><span className="text-primary">start</span><span className="text-foreground">();</span>
+      </div>
+      <div className="pt-1">
+        <span className="text-foreground">console.</span><span className="text-primary">info</span><span className="text-foreground">(</span><span className="text-emerald-400">"Queue active"</span><span className="text-foreground">);</span>
+      </div>
+    </div>
+  )
+
+  const renderSnippet = () => {
+    switch(snippet) {
+      case 'stream': return <StreamSnippet />;
+      case 'orchestrator': return <OrchestratorSnippet />;
+      case 'queue': return <QueueSnippet />;
+      default: return <EngineSnippet />;
+    }
+  }
 
   return (
     <Card className="bg-card border-border/50 hover:border-primary/30 transition-all duration-300 group flex flex-col h-full rounded-2xl overflow-hidden shadow-2xl">
@@ -94,14 +208,13 @@ export function AgentCard({ agentName, outputType, status }: AgentCardProps) {
             )}>
               <div className="flex">
                 <span className="text-primary/40 mr-3 opacity-50 select-none">$</span>
-                <HighlightedCode />
+                {renderSnippet()}
               </div>
               <span className="inline-block w-1.5 h-3 bg-primary ml-1 animate-status-pulse align-middle mt-2" />
             </div>
           )}
         </div>
 
-        {/* Scanline/Grid Overlay Effect */}
         <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,221,51,0.02),rgba(255,255,255,0.01),rgba(242,63,13,0.02))] bg-[length:100%_2px,3px_100%] opacity-20" />
       </CardContent>
     </Card>
