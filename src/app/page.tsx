@@ -101,7 +101,7 @@ export default function Home() {
             <div className="mt-8 p-4 rounded bg-accent/5 border border-accent/20 flex items-center justify-between group cursor-pointer hover:bg-accent/10 transition-colors">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent animate-status-pulse" />
-                <span className="text-sm font-headline font-medium">Critical Security Patch Available: Lyra-2.4.1</span>
+                <span className="text-sm font-headline font-medium">whats the red bar between ths 2</span>
               </div>
               <ChevronRight className="w-4 h-4 text-accent transition-transform group-hover:translate-x-1" />
             </div>
